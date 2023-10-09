@@ -14,13 +14,18 @@ hậu nào uy hiếp nhau (hậu uy hiếp theo luật cờ vua)
        x[i] = j ∀ 1 ≤ i ≤ n, 1 ≤ j ≤ n
 * Initial state: x[i] = 0 ∀ 1 ≤ i ≤ n
 * Goal state: ∀ 1 ≤ i ≤ n, 1 ≤ k ≤ n, i ≠ k => x[i] ≠ x[k], |i-k| ≠ |x[i]-x[k]|
-* Legal moves:
+* Legal moves: <br>
+  Hàm **checkRow** kiểm tra hàng ngang.
+  <pre>
   checkRow(i,j,x):
     for (k=1,k<=n,k++):
       if (i ≠ k) and (j == x[k]): return False
     return True
+  </pre>
+  Hàm **checkDiangonal** kiểm tra đường chéo.
+  <pre>
   checkDiagonal(i,j,x):
     for (k=1,k<=n,k++):
       if (i ≠ k) and (abs(i-k) == abs(j-x[k])): return False
     return True
-  
+  </pre>
