@@ -10,11 +10,11 @@ hậu nào uy hiếp nhau (hậu uy hiếp theo luật cờ vua)
 
 Để biểu diễn một cách trực quan và ngắn gọn, ta dùng mảng x để biểu diễn bàn cờ NxN, trong đó thứ tự của phần tử tương ứng vị trí cột, mỗi phần tử của x là vị trí hàng của quân hậu.
 
-* State: Mảng x gồm n phần tử. 
+* **State:** Mảng x gồm n phần tử. 
        x[i] = j ∀ 1 ≤ i ≤ n, 1 ≤ j ≤ n
-* Initial state: x[i] = 0 ∀ 1 ≤ i ≤ n
-* Goal state: ∀ 1 ≤ i ≤ n, 1 ≤ k ≤ n, i ≠ k => x[i] ≠ x[k], |i-k| ≠ |x[i]-x[k]|
-* Legal moves: <br>
+* **Initial state:** x[i] = 0 ∀ 1 ≤ i ≤ n
+* **Goal state:** ∀ 1 ≤ i ≤ n, 1 ≤ k ≤ n, i ≠ k => x[i] ≠ x[k], |i-k| ≠ |x[i]-x[k]|
+* **Legal moves:** <br>
   Hàm **checkRow** kiểm tra hàng ngang.
   <pre>
   checkRow(i,j,x):
@@ -29,3 +29,6 @@ hậu nào uy hiếp nhau (hậu uy hiếp theo luật cờ vua)
       if (i ≠ k) and (abs(i-k) == abs(j-x[k])): return False
     return True
   </pre>
+  Với điều kiện 1 ≤ i ≤ n, 1 ≤ j ≤ n, 1 ≤ k ≤ n, ta có:
+    + **(1)** <pre>x[i] = 0 --> x[i] = j, if (checkRow(i,j,x)) and (checkDiangonal(i,j,x))</pre>
+    + **(2)** <pre>x[i] = k --> x[i] = j, if (checkRow(i,j,x)) and (checkDiangonal(i,j,x))</pre>
