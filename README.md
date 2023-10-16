@@ -32,3 +32,4 @@ hậu nào uy hiếp nhau (hậu uy hiếp theo luật cờ vua)
   Với điều kiện 1 ≤ i ≤ n, 1 ≤ j ≤ n, 1 ≤ k ≤ n, ta có:
     + **(1)** <pre>x[i] = 0 --> x[i] = j, if (checkRow(i,j,x)) and (checkDiangonal(i,j,x))</pre>
     + **(2)** <pre>x[i] = k --> x[i] = j, if (checkRow(i,j,x)) and (checkDiangonal(i,j,x))</pre>
+    + **(3)** <pre>x[i] = k --> x[i] = j, if (checkRow(i,j,x)) and (checkDiangonal(i,j,x))</pre>
