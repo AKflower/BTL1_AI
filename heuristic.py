@@ -21,7 +21,7 @@ import random
 import time
 
 
-class NQueens:
+class NQueens_Heuristic:
     def __init__(self, N):
         self.N = N
         self.queenPosSol = None
@@ -97,6 +97,9 @@ class NQueens:
 
         for i in range(self.N):
             print((self.queenPosSol[i]))
+
+    def print_solution(self, queens):
+        print(queens)
 
     # print demo board for N < 50
     def printBoard(self):
@@ -302,12 +305,15 @@ class NQueens:
 
 if __name__ == "__main__":
     N = int(input())
-    q = NQueens(N)
+    q = NQueens_Heuristic(N)
 
     start_time = time.time()
     q.queen_fast_search()
     # q.dfs()
-    q.printBoard()
+    #q.print_solution(q.queenPosSol)
+    #q.printQueen()
+    #q.printBoard()
+    print(q.queenPosSol)
 
     q.checkSolution()
     end_time = time.time()
