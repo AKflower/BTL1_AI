@@ -1,9 +1,35 @@
 
-import tkinter as tk
+import tkinter as tk 
 from DFS import NQueens_DFS
 from BFS import NQueens_BFS
 from heuristic import NQueens_Heuristic
 import time
+
+class IntroWindow:
+    def __init__(self, root):
+        self.root = root
+        self.root.title('N-Queens Solver')
+        self.root.geometry('400x400')
+
+        self.bg_image = tk.PhotoImage(file="assets/Background.png")
+
+        # Tạo một label, sử dụng hình ảnh làm nền
+        self.bg_label = tk.Label(root, image=self.bg_image)
+
+# Đặt label vào vị trí mong muốn
+        self.bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+        self.intro_label = tk.Label(root, text="Welcome to N-Queens Solver!", font=('Helvetica', 20), fg='yellow', bg='gray')
+        self.intro_label.place(x=70,y=200)
+        # self.intro_label.pack()
+
+        self.next_button = tk.Button(root, text="Start", command=self.open_main_window, font=('Helvetica', 20), fg='red', bg='blue', activeforeground='green', cursor='hand1')
+        self.next_button.place(x=160,y=240)
+        
+    def open_main_window(self):
+        self.root.destroy()  # Đóng cửa sổ intro
+        main_root = tk.Tk()  # Tạo cửa sổ chính
+        gui = NQueensGUI(main_root)
+        main_root.mainloop()
 
 class NQueensGUI:
     def __init__(self, root):
@@ -173,6 +199,9 @@ class NQueensGUI:
 
 
 if __name__ == "__main__":
-    root = tk.Tk()
-    gui = NQueensGUI(root)
-    root.mainloop()
+    intro_root = tk.Tk()
+    intro = IntroWindow(intro_root)
+    intro_root.mainloop()
+    # root = tk.Tk()
+    # gui = NQueensGUI(root)
+    # root.mainloop()
