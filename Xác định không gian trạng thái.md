@@ -11,24 +11,33 @@ hậu nào uy hiếp nhau (hậu uy hiếp theo luật cờ vua)
 Để biểu diễn một cách trực quan và ngắn gọn, ta dùng mảng x để biểu diễn bàn cờ NxN, trong đó thứ tự của phần tử tương ứng vị trí cột, mỗi phần tử của x là vị trí hàng của quân hậu.
 
 * **State:** Mảng x gồm n phần tử. 
-       x[i] = j ∀ 1 ≤ i ≤ n, 1 ≤ j ≤ n
-* **Initial state:** x[i] = 0 ∀ 1 ≤ i ≤ n
-* **Goal state:** ∀ 1 ≤ i ≤ n, 1 ≤ k ≤ n, i ≠ k => x[i] ≠ x[k], |i-k| ≠ |x[i]-x[k]|
+       x[i] = j ∀ 0 ≤ i ≤ n-1, 0 ≤ j ≤ n-1
+* **Initial state:** x[i] = -1 ∀ 0 ≤ i ≤ n-1
+* **Goal state:** ∀ 0 ≤ i ≤ n-1, 0 ≤ k ≤ n-1, i ≠ k => x[i] ≠ x[k], |i-k| ≠ |x[i]-x[k]|
 * **Legal moves:** <br>
   Hàm **checkRow** kiểm tra hàng ngang.
   <pre>
-  checkRow(i,j,x):
-    for (k=1,k<=n,k++):
-      if (i ≠ k) and (j == x[k]): return False
+  function checkRow(i, j, x):
+    n=len(x)
+    for k from 0 to n do:
+        if i ≠ k and j = x[k] then
+            return False
+    end for
     return True
+end function
   </pre>
   Hàm **checkDiangonal** kiểm tra đường chéo.
   <pre>
-  checkDiagonal(i,j,x):
-    for (k=1,k<=n,k++):
-      if (i ≠ k) and (abs(i-k) == abs(j-x[k])): return False
+  function checkDiagonal(i, j, x):
+    n=len(x)
+    for k from 0 to n-1 do:
+        if i ≠ k and abs(i - k) = abs(j - x[k]) then
+            return False
+        end if
+    end for
     return True
+end function
   </pre>
-  Với điều kiện 1 ≤ i ≤ n, 1 ≤ j ≤ n, 1 ≤ k ≤ n, ta có:
-    + **(1)** <pre>x[i] = 0 --> x[i] = j, if (checkRow(i,j,x)) and (checkDiangonal(i,j,x))</pre>
+  Với điều kiện 0 ≤ i ≤ n-1, 0 ≤ j ≤ n-1, 0 ≤ k ≤ n-1, ta có:
+    + **(1)** <pre>x[i] = -1 --> x[i] = j, if (checkRow(i,j,x)) and (checkDiangonal(i,j,x))</pre>
     + **(2)** <pre>x[i] = k --> x[i] = j, if (checkRow(i,j,x)) and (checkDiangonal(i,j,x))</pre>
