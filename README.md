@@ -7,7 +7,7 @@ Bài toán N-queens là bài toán yêu cầu đặt N quân hậu lên bàn c�
 hậu nào uy hiếp nhau (hậu uy hiếp theo luật cờ vua)
 <br>
 ## Xác định không gian trạng thái
-[Xác định không gian trạng thái](https://github.com/AKflower/BTL1_AI/blob/e88062e1194e89a6ebb538d431e9a508b4fb3e05/X%C3%A1c%20%C4%91%E1%BB%8Bnh%20kh%C3%B4ng%20gian%20tr%E1%BA%A1ng%20th%C3%A1i.md)
+[Xác định không gian trạng thái](https://github.com/AKflower/BTL1_AI/blob/88252fe9aa94c7e023177deb2159a47cae29bddb/%C4%90%E1%BB%8Bnh%20ngh%C4%A9a%20kh%C3%B4ng%20gian%20tr%E1%BA%A1ng%20th%C3%A1i.md)
 
 
 ## Run
