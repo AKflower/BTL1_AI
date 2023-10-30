@@ -24,7 +24,7 @@ hậu nào uy hiếp nhau (hậu uy hiếp theo luật cờ vua)
             return False
     end for
     return True
-end function
+  end function
   </pre>
   Hàm **checkDiangonal** kiểm tra đường chéo.
   <pre>
