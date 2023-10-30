@@ -36,7 +36,7 @@ hậu nào uy hiếp nhau (hậu uy hiếp theo luật cờ vua)
         end if
     end for
     return True
-end function
+   end function
   </pre>
   Với điều kiện 0 ≤ i ≤ n-1, 0 ≤ j ≤ n-1, 0 ≤ k ≤ n-1, ta có:
     + **(1)** <pre>x[i] = -1 --> x[i] = j, if (checkRow(i,j,x)) and (checkDiangonal(i,j,x))</pre>
